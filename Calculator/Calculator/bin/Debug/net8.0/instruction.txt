@@ -1,0 +1,4 @@
+======== Instruction ========
+This program has two modes. 
+Simple mode will require you to enter two numbers and an operation. 
+Advanced mode will require you to type a comlete expression in console using correct syntax.
