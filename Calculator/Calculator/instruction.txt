@@ -1,0 +1,5 @@
+======== Instruction ========
+This program has two modes. 
+Simple mode will require you to enter two numbers and an operation. It supports four basic operations: addition (+), subtraction (-), multiplication (*), division (/).
+Advanced mode will require you to type a whole expression in console using correct C# syntax
+(Example: 2 * (4 + 6); sqrt(9); abs(-7); etc.).

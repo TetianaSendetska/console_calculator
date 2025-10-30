@@ -1,7 +1,7 @@
 ﻿using Calculator;
 using Calculator.Modes;
 
-string instructionPath = "instruction.txt";
+string instructionPath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "instruction.txt");
 List<IMode> modes = new()
 {
     new SimpleMode(),
