@@ -11,9 +11,19 @@ namespace Calculator.Modes
         public string Name => "Advanced Mode";
         public void Start()
         {
-            Console.WriteLine("Enter an expression: ");
-            string? expression = Console.ReadLine();
-            Console.WriteLine(Expression.Calculate(expression ?? "Undefined expression"));
+            try
+            {
+                string expression = InputValidation.ReadExpression();
+                Console.WriteLine(Expression.Calculate(expression));
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

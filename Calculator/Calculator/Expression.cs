@@ -9,24 +9,29 @@ using AngouriMath.Extensions;
 
 namespace Calculator
 {
-    internal static class Expression
+    public static class Expression
     {
         public static string Calculate(string expression)
         {
-            try
-            {
-                Entity expr = expression;
-                return expression + " = " + expr.EvalNumerical().ToString();
+            var expr = MathS.FromString(expression);
+            var result = expr.EvalNumerical();
 
-            }
-            catch (AngouriMath.Core.Exceptions.UnhandledParseException)
+            if (result.ToString() is "Infinity" or "NaN")
+                throw new DivideByZeroException("Division by zero detected!");
+
+            return expr.ToString() + " = " + result.ToString();
+        }
+
+        private static string NormalizeExpression(string expression)
+        {
+            expression = expression.Trim();
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(expression, @"^\d+\s+\d+$"))
             {
-                return "Your expression is invalid";
-            }
-            catch (Exception ex) {
-                return $"Error parsing expression: {ex.Message}";
+                throw new Exception("Expression is invalid");
             }
 
+            return expression;
         }
     }
 }

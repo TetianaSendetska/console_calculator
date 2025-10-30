@@ -1,9 +1,4 @@
-﻿using System.Text;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-using Calculator;
+﻿using Calculator;
 using Calculator.Modes;
 
 string instructionPath = "instruction.txt";
@@ -25,7 +20,7 @@ while (true)
     Console.WriteLine("\t0 - Exit");
 
     string? option = Console.ReadLine();
-    
+
     if (option == "0")
         break;
 
