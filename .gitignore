@@ -1,3 +1,5 @@
 .vs
-Calculator/bin/
-Calculator/obj/
+Calculator/Calculator.Tests/bin/
+Calculator/Calculator.Tests/obj/
+Calculator/Calculator/bin/
+Calculator/Calculator/obj/
